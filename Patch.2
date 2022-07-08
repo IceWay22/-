@@ -1,0 +1,35 @@
+// Получаем выбранный игроком номер
+        do
+        {
+            cout << "Угадайте любой номер ставки между 1 & 10 :";
+            cin >> guess;
+            if(guess <= 0 || guess > 10)
+                cout << "\nНомер должен быть между 1 и 10\n"
+                    <<"Повторно введите число:\n ";
+        }while(guess <= 0 || guess > 10);
+        dice = rand()%10 + 1;
+        if(dice == guess)
+        {
+            cout << "\n\nВы очень удачливый! Вы выйграли:" << bettingAmount * 10;
+            balance = balance + bettingAmount * 10;
+        }
+        else
+        {
+            cout << "Эх, вы не угадали, в следующий раз обязательно повезёт $ "<< bettingAmount <<"\n";
+            balance = balance - bettingAmount;
+        }
+        cout << "\nВыйгрышный номер был : " << dice <<"\n";
+        cout << "\nТеперь ваш баланс $ " << balance << "\n";
+        if(balance == 0)
+        {
+			cout << "У вас закончились деньги ;)";
+            break;
+        }
+        cout << "\n\n-->Понравилось ли вам наше казино?";
+        cin >> choice;
+    }while(choice =='Da'|| choice=='da');
+    cout << "\n\n\n";
+    cout << "\n\nСпасибо за отзыв, приходите ещё. Ваш баланс $ " << balance << "\n\n";
+	system("pause");
+    return 0;
+}
