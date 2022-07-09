@@ -110,6 +110,7 @@ int main()
 	system("pause");
     return 0;
 }
+
 void rules()//Правила игры в казино
 
 {
